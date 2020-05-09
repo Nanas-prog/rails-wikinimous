@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
   <head>
     <title>RailsWikinimous</title>
@@ -12,4 +12,31 @@
   <body>
     <%= yield %>
   </body>
+</html>
+ -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= content_for?(:title) ? yield(:title) : "Wikinimous" %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300|Roboto+Slab">
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <%= render 'navbar' %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8 col-sm-offset-2">
+
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+
+</body>
 </html>
